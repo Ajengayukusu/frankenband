@@ -1,0 +1,1 @@
+{"description":"FRANKENBAND — stitch a theremin (1920s), 8-bit chiptune (1980s) and modern AI voice into one monster band. Kiroween 2026, Frankenstein category.","engines":{"node":">=18"},"license":"MIT","name":"frankenband","private":true,"scripts":{"test":"node --test tests/*.test.js"},"version":"0.1.0"}

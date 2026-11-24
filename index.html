@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FRANKENBAND — The Monster Band</title>
+  <meta name="description" content="Stitch a theremin (1920s), 8-bit chiptune (1980s) and a modern AI voice into one monster band. Type a sentence, hear your monster's song.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="curtain-top">
+    <h1>FRANKENBAND</h1>
+    <p class="tagline">Three centuries of sound, stitched into one monster band.</p>
+  </header>
+
+  <main>
+    <!-- The haunted stage -->
+    <section class="stage" id="stage" aria-label="Haunted stage">
+      <div class="moon" aria-hidden="true"></div>
+      <div class="organ" aria-hidden="true">
+        <div class="pipe p1"></div><div class="pipe p2"></div><div class="pipe p3"></div>
+        <div class="pipe p4"></div><div class="pipe p5"></div><div class="pipe p6"></div>
+        <div class="pipe p7"></div>
+      </div>
+      <div class="curtain left" aria-hidden="true"></div>
+      <div class="curtain right" aria-hidden="true"></div>
+      <div class="stage-floor"></div>
+      <p class="stage-hint" id="stageHint">Move your pointer across the stage to play the theremin</p>
+      <p class="theremin-readout" id="thereminReadout" aria-live="polite">Theremin off</p>
+    </section>
+
+    <!-- Organ indicators: which stitched organ is alive right now -->
+    <section class="organs" aria-label="Stitched organs">
+      <span class="organ-badge" id="badgeTheremin">Theremin · 1920s</span>
+      <span class="organ-badge" id="badgeChip">Chip Heart · 1980s</span>
+      <span class="organ-badge" id="badgeVoice">AI Voice · 2020s</span>
+    </section>
+
+    <!-- The song writer -->
+    <section class="songwriter">
+      <label for="songText">Write your monster&rsquo;s song</label>
+      <input type="text" id="songText" maxlength="120"
+             placeholder="e.g. my monster sings tonight" autocomplete="off">
+      <div class="buttons">
+        <button type="button" id="stitchBtn" class="primary">Stitch it together</button>
+        <button type="button" id="playBtn" disabled>Play the band</button>
+        <button type="button" id="stopBtn" disabled>Stop</button>
+      </div>
+      <p class="song-meta" id="songMeta" aria-live="polite"></p>
+    </section>
+
+    <!-- Theremin + voice + recording controls -->
+    <section class="controls">
+      <button type="button" id="thereminBtn" aria-pressed="false">Theremin: off</button>
+      <button type="button" id="announceBtn" disabled>Announce the song</button>
+      <button type="button" id="recordBtn" disabled>Record the band</button>
+      <button type="button" id="replayBtn" disabled>Replay last take</button>
+      <p class="record-meta" id="recordMeta" aria-live="polite"></p>
+    </section>
+
+    <p class="now-playing" id="nowPlaying" aria-live="polite"></p>
+  </main>
+
+  <footer>
+    <p>FRANKENBAND — a Kiroween 2026 Frankenstein entry. Theremin (1920s) +
+      chiptune (1980s) + AI voice (2020s), all in your browser. No server,
+      no API key. Melody engine built spec-first with Kiro.</p>
+    <p><a href="https://github.com/Ajengayukusu/frankenband">Source on GitHub</a></p>
+  </footer>
+
+  <script src="melody.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
